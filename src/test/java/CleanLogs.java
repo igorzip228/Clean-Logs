@@ -26,4 +26,4 @@ public class CleanLogs {
         return cleanActivity.toString();
     }
 
-}
+}changed
