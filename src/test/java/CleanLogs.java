@@ -1,5 +1,3 @@
-import com.sun.javafx.scene.paint.MaterialHelper;
-
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -26,4 +24,7 @@ public class CleanLogs {
         return cleanActivity.toString();
     }
 
-}changed
+}
+
+
+//clean
