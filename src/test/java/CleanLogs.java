@@ -1,5 +1,3 @@
-import com.sun.javafx.scene.paint.MaterialHelper;
-
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -18,12 +16,20 @@ public class CleanLogs {
 
         Matcher matcher;
         for (String field : fieldNames) {
-            matcher = Pattern.compile("\\[" + field + ":[^\\]]+(?:\\] )?");
+            matcher = Pattern.compile("\\[" + field + "[^\\]]+(?:\\] )?");
             if (matcher.find())
                 cleanActivity.append(matcher.group(0));
         }
 
         return cleanActivity.toString();
+    }
+
+    public static String removableLastD(String text) {
+        return text.replaceFirst("(.*)d", "$1" );
+    }
+
+    public static boolean isGmail(String input) {
+        return Pattern.matches("^(?i)(?:(?:[^@]+@gmail\\.com)(?:,|$))+$", input);
     }
 
 }
